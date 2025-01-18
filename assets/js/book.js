@@ -54,5 +54,5 @@ addabookForm.addEventListener('submit', function (event) {
     
     // Store updated BookItems in localStorage, re-render the list
     storeLocalStorage();
-    redirectPage("book.html");
+    redirectPage("tittles.html");
   });

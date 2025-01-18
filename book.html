@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>LBK Add a Book to Library</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/book.css" />
+  <script defer src="./assets/js/logic.js" type="text/javascript"></script>
+  <script defer src="./assets/js/book.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <main> 
+    <header>
+     <section class="bg-light">
+     <div class="container-fluid p-5 bg-primary text-center text-white">
+      <div class="text-center">
+       <h1>Little Book Keeper</h1>
+       <p>A library for book people, by book people</p>
+      </div>
+     </div>
+        <!-- Navbar -->
+     <div class="text-center">
+     <nav>
+        <a href="#bookQuiz">Book Quiz</a>
+        <a href="#viewLibrary">View Library</a>
+        <a href="#changeVisual">Change Visuals</a>
+     </nav>
+     </div>
+
+    </header>
+    <div class="container p-5"></div>
+    <!-- <div class="row"> -->
+      <!-- <div class="col-sm-4"> -->
+      <!-- <section> -->
+        <div class="text-center">
+        <h2>Add a Book</h2>
+          <form id="addabook-form" method="POST">
+            <!-- An input element whose label and id are `Title` -->
+            <div class="mb-3">
+              <label for="title" class="form-label">Title:</label> <br>
+              <input type="text" class="form-control" id="title" /> <br>
+            </div>
+            <!-- An input element whose label and id are `Author` -->
+            <div class="mb-3">
+            <label for="author">Author:</label> <br>
+            <input type="text" class="form-control" id="author" /> <br>
+          </div>
+            <!-- An input element whose label and id are `Genre` -->
+          <div class="mb-3">
+            <label for="genre">Genre:</label> <br>
+            <input type="text" class="form-control" id="genre" /> <br>
+          </div>
+            <!-- <textarea id="content" name="genre"></textarea> <br> -->
+            <!-- An input element whose label and id are `Review` -->
+          <div class="mb-3">
+            <label for="review">Review:</label> <br>
+            <input type="text" class="form-control"   id="review" /> <br>
+          </div>
+            <!-- <textarea id="content" name="review"></textarea> <br> -->
+            <!-- An input element whose label and id are `current page` -->
+          <div class="row">
+            <div class="col">
+              <!-- <label for="cpage">Current Page:</label> <br> -->
+              <input type="text" class="form-control" placeholder="Current page" aria-label="current page" id="cpage" /> 
+            </div>
+            <!-- <textarea id="content" name="cpage"></textarea> <br> -->
+            <!-- An input element whose label and id are `total pages` -->
+            <div class="col">
+              <!-- <label for="tpage">Total Pages:</label> <br> -->
+              <input type="text" class="form-control" placeholder="Total pages" aria-label="total pages" id="tpage" /> <br>
+            </div>
+          </div>
+            <!-- <textarea id="content" name="tpage"></textarea> <br> -->
+            <!-- <button id="submit">Submit</button><br> -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- A p element whose id is `error` -->
+          <p id="error"></p>
+          </form>
+        </div>
+        <!-- <section> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
+
+        
+      </main>
+
+  <footer>
+  </footer>
+</body>
+</html>

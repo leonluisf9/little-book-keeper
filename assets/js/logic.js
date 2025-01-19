@@ -24,4 +24,21 @@ const redirectPage = function (url) {
   redirectURL = url;
   location.assign(url);
 };
-  
+
+const htmlRef = document.querySelector("#htmlTheme")
+const darkThemeButton = document.querySelector("#btnradio2");
+const lightThemeButton = document.querySelector("#btnradio1");
+
+darkThemeButton.addEventListener("click", function(){
+  htmlRef.setAttribute("data-bs-theme", "dark");
+});
+
+lightThemeButton.addEventListener("click", function(){
+  htmlRef.setAttribute("data-bs-theme", "light");
+});
+// const dropdownElementList = document.getElementById("theme-dropdown");
+// console.log(dropdownElementList);
+
+// dropdownElementList.addEventListener('click', function(event) {
+//   console.log(event.target); // Output: The <button> element that was clicked
+// });

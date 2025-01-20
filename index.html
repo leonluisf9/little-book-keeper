@@ -11,8 +11,33 @@
 </head>
 <body>
     <main>
-        <!--page with button to pull up modal form-->
         <section>
+
+            <!----------------- Navbar ---------------------------->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
+                <div class="container-fluid ">
+                <a class="navbar-brand" href="#">Little Book Keeper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav w-100">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" id="library-btn" href="tittles.html">My Library</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#quiz-modal">Book Quiz</a>
+                    <div class="btn-group ms-auto" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="btnradio1">Light</label>
+                    
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio2">Dark</label>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </nav>
+            <!---------------------------------------------------------->
+
             <div class="container-fluid p-5 bg-primary text-center">
                 <div class="text-center">
                     <h1>Little Book Keeper</h1>
@@ -25,15 +50,17 @@
                 <div class="row">
                   <div class="col-sm-4">
                     <h3>Personal Library</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                    <p>Build your sanctuary, were your collection of knowledge and understanding resides!</p>
+                    </br>
+                    <p>What adventures or odysseys await?</p>
+                    <button class="btn btn-primary" id="library-btn">View My Library</button>
                   </div>
                   <div class="col-sm-4">
                     <h3>Book Quiz</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                    <div class="row justify-content-center">
-                        <div class="div col-md-8 text-center">
+                    <p>Check out our recommendations for this season by taking our quiz!</p>
+                    <p>Our hot topics for this month are in the genres of: Horror, Fantasy, and Romance!</p>
+                    <div class="row">
+                        <div class="div col-md-8">
                             <!--Book Quiz Modal Button-->
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quiz-modal">Take the Quiz</button>
                         </div>
@@ -41,9 +68,9 @@
                   </div>
                   <div class="col-sm-4">
                     <h3>Customize Your Space</h3>        
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-
+                    <p>Make this space yours, with our new Dark and Light modes!</p>
+                  </br>
+                  <p>Try it here!</p>
                       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                         <label class="btn btn-outline-primary" for="btnradio1">Light</label>
@@ -55,7 +82,7 @@
                 </div>
               </div>
 
-              <div class="container-fluid p-5 bg-secondary text-center">
+              <div class="container-fluid p-5 bg-secondary-subtle text-center">
                 <div class="text-center">
                     <h2>Get Started Today</h2>
                     <div class="row justify-content-center">
@@ -73,17 +100,24 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-center" id="modal-title">Sign In</h5>
+                        <h3 class="modal-title text-center" id="modal-title">Sign In</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form>
-                            <label>First Name</label>
+                            <label class="h5" for="first-name">First Name</label>
+                            </br>
+                            <input type="text" id="first-name" name="first-name">
+                            </br>
+                            </br>
+                            <label class="h5" for="last-name">Last Name</label>
+                            </br>
+                            <input type="text" id="last-name" name="last-name">
                             
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary" id="sign-in-submit">Submit</button>
                     </div>
                 </div>
             </div>
@@ -98,7 +132,7 @@
                         <h1 class="modal-title text-center">Book Quiz</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="quiz-modal-body">
                         <form id="quizForm">
                             <!-- Question 1 -->
                             <div class="question">
@@ -149,7 +183,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="quiz-submit">Submit</button>
                     </div>
                 </div>
             </div>
@@ -158,53 +192,6 @@
 
     </main>
 
-
-<!-- <section>
-    <h1>Book Quiz</h1>
-<form id="quizForm">
-  
-    <div class="question">
-        <label>1. Walking through the forest a bear spots you, what do you do?</label><br>
-        <input type="radio" name="q1" value="A"> Run as fast as you can<br>
-        <input type="radio" name="q1" value="B"> Confront the bear<br>
-        <input type="radio" name="q1" value="C"> Yell for help, until get rescued by the love of your life.<br>
-    </div>
-
-    <div class="question">
-        <label>2. You need to get to the other side, which path do you take?</label><br>
-        <input type="radio" name="q2" value="A"> The mystery path<br>
-        <input type="radio" name="q2" value="B"> The adventure path<br>
-        <input type="radio" name="q2" value="C"> The love path<br>
-    </div>
-
-    <div class="question">
-        <label>3. A very difficult puzzle needs figuring out, which option are you more likely to do?</label><br>
-        <input type="radio" name="q3" value="A"> Gather a team and figure it out.<br>
-        <input type="radio" name="q3" value="B"> Summon an intelligent creature to solve it for you.<br>
-        <input type="radio" name="q3" value="C"> Use your charm to make a person do it for <br>
-    </div>
-
-
-    <div class="question">
-        <label>4. Something else exists out there, what is it?</label><br>
-        <input type="radio" name="q4" value="A"> Monsters<br>
-        <input type="radio" name="q4" value="B"> Magic<br>
-        <input type="radio" name="q4" value="C"> Love<br>
-    </div>
-
-    <div class="question">
-        <label>5. Best place to read is on?</label><br>
-        <input type="radio" name="q5" value="A"> On a stormy night<br>
-        <input type="radio" name="q5" value="B"> Under the moonlight<br>
-        <input type="radio" name="q5" value="C"> Room and a cozy bed<br>
-    </div>
-
-    <button type="submit">Submit Quiz</button>
-</form>
-    
-</section> -->
-
-<!--bootstrap js cdn-->
 <script src="./assets/script.js"></script>
 </body>
 </html>

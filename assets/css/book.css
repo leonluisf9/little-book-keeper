@@ -1,10 +1,10 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
   
   /* brand color palette */
-  :root {
+  /* :root {
     --primary: rgba(68, 88, 119, 1);
     --secondary: rgb(32, 110, 255);
     --tertiary: rgb(245, 247, 252);
@@ -36,7 +36,7 @@ p {
 
 header {
   padding: 15px 6% 15px 0;
-  /* display: flex; */
+  /* display: flex; 
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -87,4 +87,4 @@ header h1 {
     margin-bottom: 45px;
   }
   
-  
+   */

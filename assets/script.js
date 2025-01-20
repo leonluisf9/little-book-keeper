@@ -49,7 +49,12 @@ function determineGenre(answers) {
 
 
 // Handle form submission
-document.getElementById('quizForm').addEventListener('submit', function(event) {
+const bookQuiz = document.getElementById("quizForm");
+const bookQuizBtn = document.getElementById("quiz-submit");
+const quizModalText = document.querySelector("#quiz-modal-body");
+
+console.log(quizModalText);
+bookQuizBtn.addEventListener('click', function(event) {
     event.preventDefault();  // Prevent the form from submitting
 
     const answers = [];
@@ -73,5 +78,20 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
     const genre = determineGenre(answers);
 
     // Display the result
-    document.getElementById('result').innerHTML = `Based on your answers, your suggested book genre is: <strong>${genre}</strong>`;
+
+    quizModalText.textContent = `Based on your answers, your suggested book genre is: ${genre}`;
     });
+
+    //Sign In Info -- Home Page Only
+    function userInfoLocalStorage() {
+        const fname = document.querySelector("#first-name").value;
+        const lname = document.querySelector("#last-name").value;
+        localStorage.setItem('firstName', JSON.stringify(fname));
+        localStorage.setItem('lastName', JSON.stringify(lname));
+      }
+      
+      const signInBtn = document.querySelector("#sign-in-submit"); 
+      signInBtn.addEventListener('click', function(){
+        console.log(typeof(localStorage.getItem('firstName')));
+        userInfoLocalStorage();
+      });

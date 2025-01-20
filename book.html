@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlTheme" data-bs-theme="">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,20 +20,40 @@
 
     <header>
      <section class="bg-light">
+
+      <!----------------- Navbar ---------------------------->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
+        <div class="container-fluid ">
+        <a class="navbar-brand" href="#">Little Book Keeper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav w-100">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" id="library-btn" href="tittles.html">My Library</a>
+            <a class="nav-link" href="#">Pricing</a>
+            <div class="btn-group ms-auto" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Light</label>
+            
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Dark</label>
+            </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!---------------------------------------------------------->
+
+
      <div class="container-fluid p-5 bg-primary text-center text-white">
       <div class="text-center">
        <h1>Little Book Keeper</h1>
        <p>A library for book people, by book people</p>
       </div>
      </div>
-        <!-- Navbar -->
-     <div class="text-center">
-     <nav>
-        <a href="#bookQuiz">Book Quiz</a>
-        <a href="#viewLibrary">View Library</a>
-        <a href="#changeVisual">Change Visuals</a>
-     </nav>
-     </div>
+        
     </header>
 
     <div class="container p-5"></div>

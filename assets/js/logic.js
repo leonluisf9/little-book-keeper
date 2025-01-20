@@ -25,20 +25,36 @@ const redirectPage = function (url) {
   location.assign(url);
 };
 
+// Light and Dark theme logic
 const htmlRef = document.querySelector("#htmlTheme")
-const darkThemeButton = document.querySelector("#btnradio2");
-const lightThemeButton = document.querySelector("#btnradio1");
+const darkThemeButtons = document.querySelectorAll("#btnradio2");
+const lightThemeButtons = document.querySelectorAll("#btnradio1");
 
-darkThemeButton.addEventListener("click", function(){
-  htmlRef.setAttribute("data-bs-theme", "dark");
+darkThemeButtons.forEach(element => {
+  element.addEventListener("click", function(){
+  //if(!htmlRef.getAttribute("data-bs-theme") == "dark"){
+    htmlRef.setAttribute("data-bs-theme", "dark");
+    let primaryElement = document.querySelector(".bg-primary");
+    primaryElement.classList.add("bg-primary-subtle");
+    primaryElement.classList.remove("bg-primary");
+    console.log(primaryElement);
+  //}
+  })
 });
 
-lightThemeButton.addEventListener("click", function(){
+lightThemeButtons.forEach(element => { 
+element.addEventListener("click", function(){
   htmlRef.setAttribute("data-bs-theme", "light");
+  let primaryElement = document.querySelector(".bg-primary-subtle");
+  primaryElement.classList.add("bg-primary");
+  primaryElement.classList.remove("bg-primary-subtle");
+  console.log(primaryElement);
+})
 });
-// const dropdownElementList = document.getElementById("theme-dropdown");
-// console.log(dropdownElementList);
 
-// dropdownElementList.addEventListener('click', function(event) {
-//   console.log(event.target); // Output: The <button> element that was clicked
-// });
+const libraryBtns = document.querySelectorAll("#library-btn");
+libraryBtns.forEach(element => {
+  element.addEventListener('click', function(){
+  redirectPage("tittles.html");
+})
+});

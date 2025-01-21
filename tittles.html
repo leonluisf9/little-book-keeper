@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlTheme" data-bs-theme="">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,17 +15,34 @@
 </head>
 
 <body>
-  <section class="bg-light">
+  <section>
 
     <header>
-     <div class="container-fluid  p-3 bg-primary text-left text-black">
-        <h3>Little Book Keeper</h3> 
-        <nav>  
-        <!-- Navbar -->
-             <a href="#bookQuiz">Book Quiz</a>
-             <a href="#viewLibrary">View Library</a>
-             <a href="#changeVisual">Change Visuals</a>
-        </nav>
+        <!----------------- Navbar ---------------------------->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
+          <div class="container-fluid ">
+          <a class="navbar-brand" href="#">Little Book Keeper</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav w-100">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" id="library-btn" href="tittles.html">My Library</a>
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#quiz-modal">Book Quiz</a>
+              <div class="btn-group ms-auto" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="btnradio1">Light</label>
+              
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="btnradio2">Dark</label>
+              </div>
+              </div>
+          </div>
+          </div>
+      </nav>
+      <!---------------------------------------------------------->
+      <div class="container-fluid  p-3 bg-primary text-left text-black">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" id="sort" href="#">▲ Title A-Z</a>
@@ -40,10 +57,87 @@
         </nav>
      </div>
     </header> 
+
    <main id="main">  
+    <div class="container mt-3">
+      <div class="row row-cols-3 text-center" id="library">
+        
+      </div>
+    </div>
    </main>
+
+
+
+   <!--The Book Quiz Modal-->
+   <div class="modal fade" id="quiz-modal" tabindex="-1" aria-labelledby="model-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title text-center">Book Quiz</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="quiz-modal-body">
+                <form id="quizForm">
+                    <!-- Question 1 -->
+                    <div class="question">
+                        <label>1. Walking through the forest a bear spots you, what do you do?</label><br>
+                        <input type="radio" name="q1" value="A"> Run as fast as you can<br>
+                        <input type="radio" name="q1" value="B"> Confront the bear<br>
+                        <input type="radio" name="q1" value="C"> Yell for help, until get rescued by the love of your life.<br>
+                    </div>
+                    <br/>
+
+                    <!-- Question 2 -->
+                    <div class="question">
+                        <label>2. You need to get to the other side, which path do you take?</label><br>
+                        <input type="radio" name="q2" value="A"> The mystery path<br>
+                        <input type="radio" name="q2" value="B"> The adventure path<br>
+                        <input type="radio" name="q2" value="C"> The love path<br>
+                    </div>
+                    <br/>
+
+                    <!-- Question 3 -->
+                    <div class="question">
+                        <label>3. A very difficult puzzle needs figuring out, which option are you more likely to do?</label><br>
+                        <input type="radio" name="q3" value="A"> Gather a team and figure it out.<br>
+                        <input type="radio" name="q3" value="B"> Summon an intelligent creature to solve it for you.<br>
+                        <input type="radio" name="q3" value="C"> Use your charm to make a person do it for <br>
+                    </div>
+                    <br/>
+
+                    <!-- Question 4 -->
+                    <div class="question">
+                        <label>4. Something else exists out there, what is it?</label><br>
+                        <input type="radio" name="q4" value="A"> Monsters<br>
+                        <input type="radio" name="q4" value="B"> Magic<br>
+                        <input type="radio" name="q4" value="C"> Love<br>
+                    </div>
+                    <br/>
+
+                    <!-- Question 5 -->
+                    <div class="question">
+                        <label>5. Best place to read is on?</label><br>
+                        <input type="radio" name="q5" value="A"> On a stormy night<br>
+                        <input type="radio" name="q5" value="B"> Under the moonlight<br>
+                        <input type="radio" name="q5" value="C"> Room and a cozy bed<br>
+                    </div>
+                    <br/>
+
+                    <!-- <button type="submit">Submit Quiz</button> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="quiz-submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------------------------------------------------------->
+
   <footer>
   </footer>
 </section>
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

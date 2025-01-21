@@ -13,21 +13,40 @@ function noBooks() {
   mainEl.innerHTML ="No Books in library yet...";
 }
 
+//render visuals
+const libraryGrid = document.querySelector("#library");
 function renderBookList() {
   let booksArray = JSON.parse(localStorage.getItem('books')) || [];
   if (booksArray.length === 0) {
       noBooks();
   }
+  //show books
   for (let i = 0; i < booksArray.length; i++) {
-  const newBook = document.createElement("article");
+    //add column element
+  const newBook = document.createElement("div");
+  newBook.classList.add("col");
+  //title and author
   const newTitle = document.createElement("h2");
   newTitle.textContent = booksArray[i].title;
-  const newAuthorname = document.createElement("blockquote");
+  const newAuthorname = document.createElement("p");
   newAuthorname.textContent = "Authored by " + booksArray[i].author;
-//   console.log('Author: ' + newAuthorname.textContent);
+  //image
+  const imageRef = booksArray[i].title.replaceAll(" ", "");
+  let bookImage = document.createElement('img');
+  bookImage.classList.add("img-fluid");
+  bookImage.src = "./assets/images/" + imageRef + '.jpg';
+  console.log(bookImage.src);
+  //replace image if we do not have one in our database
+  bookImage.addEventListener("error", function(){
+    bookImage.src = "./assets/images/bookStandIn.jpg";
+  });
+  
+  
+  //add all elements to screen
+  newBook.appendChild(bookImage);
   newBook.appendChild(newTitle);
   newBook.appendChild(newAuthorname);
-  mainEl.appendChild(newBook);
+  libraryGrid.appendChild(newBook);
   }
 }
 

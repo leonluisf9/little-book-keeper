@@ -91,7 +91,10 @@ bookQuizBtn.addEventListener('click', function(event) {
       }
       
       const signInBtn = document.querySelector("#sign-in-submit"); 
-      signInBtn.addEventListener('click', function(){
+      if(signInBtn){
+        signInBtn.addEventListener('click', function(){
         console.log(typeof(localStorage.getItem('firstName')));
         userInfoLocalStorage();
-      });
+        });
+      }
+      

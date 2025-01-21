@@ -53,9 +53,7 @@ function renderBookList() {
 //Call the `renderBookList` function
 renderBookList();
 
-addEl.addEventListener('click', function () {
-  redirectPage("book.html");
-});
+
 sortEl.addEventListener('click', function () {
     let bookItems = JSON.parse(localStorage.getItem('books')) || [];
     if (bookItems !== null) {
